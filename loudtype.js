@@ -5,11 +5,11 @@ function random(min, max) {
 function keyDecTemplate(kind) {
   document.addEventListener(kind, function(e) {
     if (e.code != 'Space' && e.code != 'Enter' && e.code != 'Backspace') {
-      const keysound = new Audio('GENERIC.mp3');
+      const keysound = new Audio(`holypanda/${kind}/GENERIC.mp3`);
       keysound.play();
     }
     else {
-      const keysound = new Audio(`${e.code}.mp3`);
+      const keysound = new Audio(`holypanda/${kind}/${e.code}.mp3`);
       keysound.play();
     }
   });
