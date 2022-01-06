@@ -1,6 +1,6 @@
 function makeListeners(kind,key) {
   const audio = new Audio(`http://demon--hunter.com/loudtype/holypanda/${kind}/${key}.mp3`);
-  document.addEventListener(kind, function(e) {
+  document.addEventListener(kind, function(audio) {
     audio.addEventListener('canplay', () =>{
       audio.play()
     })
