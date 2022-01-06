@@ -1,18 +1,18 @@
-function keyDecTemplate(kind) {
+function makeListeners(kind,key) {
+  const audio = new Audio(`http://demon--hunter.com/loudtype/holypanda/${kind}/${key}.mp3`);
   document.addEventListener(kind, function(e) {
-    if (e.code != 'Space' && e.code != 'Enter' && e.code != 'Backspace') {
-      const keysound = new Audio(`http://demon--hunter.com/loudtype/holypanda/${kind}/GENERIC.mp3`);
-        keysound.addEventListener('canplay', () =>{
-          keysound.play();
-        });
-    }
-    else {
-      const keysound = new Audio(`http://demon--hunter.com/loudtype/holypanda/${kind}/${e.code}.mp3`);
-      keysound.addEventListener('canplay', () =>{
-        keysound.play();
-      });
-    }
+    audio.addEventListener('canplay', () =>{
+      audio.play()
+    })
   });
 }
-keyDecTemplate('keypress');
-keyDecTemplate('keyup');
+
+makeListeners('keypress','Space');
+makeListeners('keypress','Enter');
+makeListeners('keypress','Backspace');
+makeListeners('keypress','GENERIC');
+
+makeListeners('keyup','Space');
+makeListeners('keyup','Enter');
+makeListeners('keyup','Backspace');
+makeListeners('keyup','GENERIC');
