@@ -26,5 +26,5 @@ function makeListeners(kind) {
   });
 }
 
-makeListeners('keypress');
+makeListeners('keydown');
 makeListeners('keyup');
